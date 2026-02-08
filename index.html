@@ -4,156 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover your nose shape online! Visit WhatIsMyNoseShape.com for free nose shape analysis.">
-    <title>Find Your Nose Shape</title>
+    <title>Find Your Nose Shape | WhatIsMyNoseShape.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset some default styles */
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
-
         body {
-            background: #f9f9f9;
+            background: #f5f7fa;
             color: #333;
             line-height: 1.6;
         }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
+        /* Header */
         header {
-            background: #ff6f61;
-            color: white;
-            padding: 20px 0;
+            background: linear-gradient(90deg, #ff6f61, #ff8a5b);
+            padding: 50px 20px;
             text-align: center;
-        }
-
-        header h1 {
-            margin-bottom: 10px;
-            font-size: 2em;
-        }
-
-        header a {
             color: white;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        header a {
+            font-weight: 700;
             text-decoration: underline;
         }
 
+        /* Main Section */
         main {
-            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
             text-align: center;
         }
-
         main h2 {
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            font-size: 2em;
             color: #ff6f61;
+            margin-bottom: 20px;
         }
-
         main p {
+            font-size: 1.1em;
+            max-width: 600px;
             margin-bottom: 30px;
         }
-
-        button {
+        .btn {
             background: #ff6f61;
             color: white;
             border: none;
-            padding: 12px 25px;
-            cursor: pointer;
+            padding: 15px 35px;
             font-size: 1em;
-            border-radius: 5px;
-            transition: background 0.3s;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #ff3b2f;
         }
 
-        button:hover {
-            background: #ff4c3b;
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-card h3 {
+            color: #ff6f61;
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            color: #666;
         }
 
+        /* Footer */
         footer {
             background: #333;
             color: white;
-            padding: 15px 0;
             text-align: center;
+            padding: 30px 20px;
         }
-
         footer a {
             color: #ff6f61;
-            text-decoration: none;
+            font-weight: 600;
         }
 
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        .popup button {
-            margin-top: 20px;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 900;
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            main h2 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <h1>Find Your Nose Shape</h1>
         <p>Check it out now: <a href="https://whatismynoseshape.com/" target="_blank">WhatIsMyNoseShape.com</a></p>
     </header>
 
+    <!-- Main Section -->
     <main>
         <h2>Discover Your Nose Shape Instantly!</h2>
-        <p>Click the button below to visit our website and find out your nose shape for free.</p>
-        <button id="visitBtn">Visit Website</button>
+        <p>Are you curious about your nose type? Visit our website to quickly analyze your nose shape and learn more about your facial features.</p>
+        <button class="btn" onclick="window.open('https://whatismynoseshape.com/', '_blank')">Visit Website</button>
     </main>
 
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="popup">
-        <h2>Redirecting...</h2>
-        <p>You will be redirected to <strong>WhatIsMyNoseShape.com</strong> shortly.</p>
-        <button id="closeBtn">Close</button>
-    </div>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>Easy to Use</h3>
+            <p>Analyze your nose shape in seconds with our simple and user-friendly interface.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Free Analysis</h3>
+            <p>Get your nose shape identified for free without any hidden charges or sign-ups.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Share With Friends</h3>
+            <p>Discover your nose shape and share it with friends to see their results too!</p>
+        </div>
+        <div class="feature-card">
+            <h3>Mobile Friendly</h3>
+            <p>Access the website on any device — our responsive design works perfectly on mobile and desktop.</p>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 <a href="https://whatismynoseshape.com/" target="_blank">WhatIsMyNoseShape.com</a> | All Rights Reserved</p>
     </footer>
-
-    <script>
-        const visitBtn = document.getElementById('visitBtn');
-        const popup = document.getElementById('popup');
-        const overlay = document.getElementById('overlay');
-        const closeBtn = document.getElementById('closeBtn');
-
-        visitBtn.addEventListener('click', () => {
-            overlay.style.display = 'block';
-            popup.style.display = 'block';
-            setTimeout(() => {
-                window.open('https://whatismynoseshape.com/', '_blank');
-            }, 1500);
-        });
-
-        closeBtn.addEventListener('click', () => {
-            overlay.style.display = 'none';
-            popup.style.display = 'none';
-        });
-
-        overlay.addEventListener('click', () => {
-            overlay.style.display = 'none';
-            popup.style.display = 'none';
-        });
-    </script>
 
 </body>
 </html>
